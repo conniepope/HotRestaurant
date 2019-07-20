@@ -1,7 +1,7 @@
 // Dependencies
 // =============================================================
 var express = require("express");
-// var path = require("path");
+var path = require("path");
 
 // Sets up the Express App
 // =============================================================
@@ -28,7 +28,27 @@ app.get("/tables", function(req, res) {
 });
 
 
+// Variables
+// =============================================================
 
+var reserve = [];
+
+
+// Take in JSON
+// =============================================================
+
+app.post("/api/reserve", function(req, res) {
+
+  var newReserve = req.body;
+
+  newReserve.routeName = newReserve.name.replace(/\s+/g, "").toLowerCase();
+
+  console.log(newReserve);
+
+  reserve.push(newReserve);
+
+  res.json(newReserve);
+});
 
 
 
