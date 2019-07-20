@@ -44,6 +44,7 @@ app.post("/api/reserve", function(req, res) {
   newReserve.routeName = newReserve.name.replace(/\s+/g, "").toLowerCase();
 
   console.log(newReserve);
+  console.log(req);
 
   reserve.push(newReserve);
 
